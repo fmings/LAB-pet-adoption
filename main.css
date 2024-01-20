@@ -1,3 +1,137 @@
 body {
   background-color: azure;
 }
+
+.buttons-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  }
+
+  button {
+    margin: 10px 20px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    color:white;
+    font-size: 20px;
+  }
+
+  .cats-button {
+    background-color: #55a2d2;
+  }
+
+  .cats-button:hover{
+    background-color: #3c6f8f;
+  }
+
+  .dogs-button {
+    background-color: #5db244 ;
+  }
+
+  .dogs-button:hover {
+    background-color: #427c30 ;
+  }
+
+  .dinos-button {
+    background-color: #dca93a;
+  }
+
+  .dinos-button:hover {
+    background-color: #967329;
+  }
+
+  .all-pets-button {
+    background-color: darksalmon;
+    color: black;
+  }
+
+  .all-pets-button:hover {
+    background-color: rgb(191, 111, 84);
+    color: black;
+  }
+
+  #app {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .card{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 500px;
+  }
+#pet-submission {
+  text-align: center;
+}
+.submit-button {
+  background-color: darkblue;
+}
+
+.submit-button:hover {
+  background-color: #041e5a;
+}
+
+form {
+  max-width:900px;
+  display: block;
+  margin: 10px auto;
+}
+
+input {
+  width: 500px;
+  height: 40px;
+  padding: 5px
+}
+
+select {
+  width: 500px;
+  height: 40px;
+  padding: 5px
+}
+
+label {
+  display: inline-block;
+  width: 200px;
+  text-align: right;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.form-field {
+  margin: 10px;
+}
+
+.card-title {
+  background-color: lightgrey;
+  color: rgb(121, 117, 117);
+  margin-bottom: 5px;
+  padding-bottom: 15px;
+  padding-top: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.card-body{
+  padding:0;
+}
+
+img {
+  padding: 5px 20px;
+  border-radius: 10px;
+}
+
+.color, .card-text {
+  text-align: center;
+}
+
+.type {
+  background-color: lightgreen;
+  color: darkgreen;
+  padding-bottom: 15px;
+  padding-top: 10px;
+  text-align: center;
+}
