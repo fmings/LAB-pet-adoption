@@ -60,9 +60,10 @@ body {
   }
 
   .card{
+    display: flex;
     margin-top: 10px;
     margin-bottom: 10px;
-    height: 500px;
+    height: 550px;
   }
 #pet-submission {
   text-align: center;
@@ -117,6 +118,10 @@ label {
 
 .card-body{
   padding:0;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: space-between;
 }
 
 img {
@@ -131,7 +136,35 @@ img {
 .type {
   background-color: lightgreen;
   color: darkgreen;
-  padding-bottom: 15px;
+  padding-bottom: 5px;
   padding-top: 10px;
   text-align: center;
+  margin-bottom: 0px;
+  text-transform: capitalize;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#cat {
+  background-color: lightblue;
+  color: darkblue;
+}
+
+#dog {
+  background-color: lightgreen;
+  color: darkgreen;
+}
+
+#dino {
+  background-color: lightgoldenrodyellow;
+  color: darkgoldenrod;
+}
+
+.delete-button {
+  background-color: #e62d2dc1;
+  color: whitesmoke;
+  font-weight: bold;
+  padding: 5px 10px;
+  font-size: 12px;
 }

@@ -241,12 +241,12 @@ const pets = [
       imageUrl: "https://www.svgheart.com/wp-content/uploads/2021/11/triceratops-dino-silhouette-dinosaur-free-svg-file-SVGHEART.COM.png"
     }
   ];
+
   const renderToDom = (divId, htmltoRender) => {
     const selectedDiv = document.querySelector(divId);
     selectedDiv.innerHTML = htmltoRender
   }
 
-  //const petCard = document.querySelector(".card");
   const cardsOnDom = (array) => {
     let domString = "";
     for (const member of array) {
@@ -256,7 +256,7 @@ const pets = [
           <img src="${member.imageUrl}" class="card-img-top" alt="...">
           <p class="color">${member.color}</p>
           <p class="card-text">${member.specialSkill}</p>
-          <p class="type">${member.type}</p>
+          <p class="type" id="${member.type}">${member.type}<span><button class="delete-button" id="delete--${member.id}">Delete</button></span></p>
         </div>
       </div>`
     };
@@ -264,8 +264,6 @@ const pets = [
 
   }
 
-
-  //petCard.innerHTML = domString;
 
   const filter = (array, animalType) => {
     const animalArray = [];
@@ -318,3 +316,22 @@ const pets = [
   }
 
  form.addEventListener("submit", createPet)
+
+ const app = document.querySelector("#app")
+
+ app.addEventListener("click", (e) => {
+  if (e.target.id.includes("delete")) {
+    const [ , id] = e.target.id.split("--");
+  
+  const index = pets.findIndex((e) => e.id === Number(id));
+  pets.splice(index, 1);
+
+  cardsOnDom(pets);
+  }
+ })
+
+ const startApp = () => {
+  cardsOnDom(pets);
+ }
+
+ startApp()
