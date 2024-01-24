@@ -1,3 +1,5 @@
+let filterToggle = true;
+
 console.log("test test")
 const pets = [
     {
@@ -265,14 +267,15 @@ const pets = [
   }
 
 
-  const filter = (array, animalType) => {
+  const filter = (animalType) => {
+    filterToggle = false;
     const animalArray = [];
-    for (const member of array) {
-      if (member.type === animalType) {
-        animalArray.push(member)
+    for (const pet of pets) {
+      if (pet.type === animalType) {
+        animalArray.push(pet)
       }
     }
-    return animalArray
+    cardsOnDom(animalArray)
   }
 
   const catButtonEl = document.querySelector(".cats-button");
@@ -282,19 +285,21 @@ const pets = [
 
   
   allButtonEl.addEventListener("click", () => {
+    filterToggle = true;
     cardsOnDom(pets);
   })
   catButtonEl.addEventListener("click", () => {
-    const catAnimals = filter(pets, "cat");
-    cardsOnDom(catAnimals);
+    filter("cat")
   })
   dogButtonEl.addEventListener("click", () => {
-    const dogAnimals = filter(pets, "dog");
-    cardsOnDom(dogAnimals)
+    filter("dog")
+    //const dogAnimals = filter(pets, "dog");
+    //cardsOnDom(dogAnimals)
   })
   dinoButtonEl.addEventListener("click", () => {
-    const dinoAnimals = filter(pets, "dino");
-    cardsOnDom(dinoAnimals)
+    filter("dino")
+    //const dinoAnimals = filter(pets, "dino");
+    //cardsOnDom(dinoAnimals)
   })
 
   const form = document.querySelector("form");
@@ -324,9 +329,14 @@ const pets = [
     const [ , id] = e.target.id.split("--");
   
   const index = pets.findIndex((e) => e.id === Number(id));
+  const pet = pets.find((p) => p.id === Number(id));
   pets.splice(index, 1);
 
-  cardsOnDom(pets);
+  if (filterToggle) {
+    cardsOnDom(pets)
+  } else {
+    filter(pet.type)
+  }
   }
  })
 
